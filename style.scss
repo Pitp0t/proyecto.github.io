@@ -13,6 +13,14 @@ $second-color:#fb4c35;
     user-select: none;
     
 }
+
+//VARIABLES
+
+$height:230px;
+
+
+
+
 .bodyContainer{
     overflow-x: hidden;
 }
@@ -33,7 +41,7 @@ body{
     margin-top: -110px;
     height: 100vh;
     overflow-x: hidden;
-    background-image: url('cabeza.jpg');
+    background-image: url('./cabeza.jpg');
     background-size:cover;
     background-repeat: no-repeat;
     background-position-y: -100px ;
@@ -110,6 +118,10 @@ header{
     }
 }
 
+//=======================
+//LOCATED IN ARGENTINA //
+//=======================
+
 .from{
     display: flex;
     align-items: center;
@@ -167,6 +179,8 @@ header{
 
 
 .containerprincipal{
+    width: 100%;
+    
     margin-top: -10vh;
     display: flex;
     justify-content: center;
@@ -214,6 +228,12 @@ header{
     text-align: center;
 }
 .section{
+    width: 100%;
+    
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    
     margin-top: 4em;
     display: flex;
     align-items: center;
@@ -304,13 +324,104 @@ header{
     
 } 
 
+//========================================
+//ROTACION DE CABEZAS - Mejorar con sass
+//=========================================
+
+
+.containerCajas{
+    border-radius: 50%;
+    
+    margin: 8em auto;
+    position: relative;
+    height: 800px;
+    width: 800px;
+    transform: rotate(0);
+    transition: transform 10s;
+    
+    
+}
+
+.containerCajas:hover{
+    transform: rotate(1080deg);
+    transition: transform 10s;
+    .caja{
+        transform: rotate(-1080deg);
+        transition: transform 10s;
+    }
+
+}
+
+
+
+.caja{
+    margin: 1em;
+   
+    height: $height;
+    width: $height;
+    position: absolute;
+    transform: rotate(0);
+    transition: transform 10s;
+    background-size:cover ;
+    
+    border-radius: 50%;
+    img{
+        height: $height;
+        width: $height;
+    }
+    
+    
+}
+
+
+
+
+.caja:nth-child(1){
+    bottom: calc($height - $height/1.5);
+    right: calc($height - $height/1.5);
+    
+}
+.caja:nth-child(2){
+    top: calc($height - $height/1.5);
+    right: calc($height - $height/1.5);
+}
+.caja:nth-child(3){
+    bottom: calc($height - $height/1.5);
+    left: calc($height - $height/1.5);
+}
+.caja:nth-child(4){
+    top: calc($height - $height/1.5);
+    left: calc($height - $height/1.5);
+}
+
+.caja:nth-child(5){
+    top: calc(50% - $height/2);
+    left: 0;
+}
+.caja:nth-child(6){
+    top: calc(50% - $height/2);
+    right: 0;
+    
+    
+}
+.caja:nth-child(7){
+    bottom: 0;
+    left: calc(50% - $height/2);
+}
+.caja:nth-child(8){
+    top: 0;
+    left: calc(50% - $height/2);
+}
+
+
+
+
+
 
 
 
 @media only screen and (max-width: 1440)  {
-    body{
-        background: red;
-    }
+    
    
     .containerprincipal{
         margin-top: 20vh;
@@ -328,6 +439,9 @@ header{
 
 
     header nav {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
         margin: 0;
         ul{
             
@@ -341,16 +455,14 @@ header{
 
 
     #ul-list{
-        background: red;
+        background: rgb(234, 234, 234);
         transform: translateX(1em);
 
     }
-    nav{
-       
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
-    }
+    
+    //=======================
+    //CLASE PARA MOSTRAR HAMBURGUER ICON//
+    //=======================
 
     .show{
         display: flex;
@@ -391,5 +503,10 @@ header{
     .section{
         flex-direction: column;
 
+    }
+
+    .works{
+        margin-top: 100em;
+        
     }
 }

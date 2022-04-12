@@ -31,7 +31,7 @@ const svg = document.getElementById('Capa_1');
 window.addEventListener('scroll',()=>{
     
     valor = 1 + window.scrollY/120;
-    console.log(valor)
+    console.log('evento')
     if(valor < 10 ) {
         scroll.style.transform=`scale(${valor})`;
         

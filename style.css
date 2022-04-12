@@ -28,7 +28,7 @@ body {
   margin-top: -110px;
   height: 100vh;
   overflow-x: hidden;
-  background-image: url("/cabeza.jpg");
+  background-image: url("./cabeza.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -100px;
@@ -146,6 +146,7 @@ header nav li a:hover {
 }
 
 .containerprincipal {
+  width: 100%;
   margin-top: -10vh;
   display: flex;
   justify-content: center;
@@ -189,6 +190,9 @@ header nav li a:hover {
 }
 
 .section {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
   margin-top: 4em;
   display: flex;
   align-items: center;
@@ -262,11 +266,81 @@ header nav li a:hover {
   transition: color 0.3s;
 }
 
-@media only screen and (max-width: 1440) {
-  body {
-    background: red;
-  }
+.containerCajas {
+  border-radius: 50%;
+  margin: 8em auto;
+  position: relative;
+  height: 800px;
+  width: 800px;
+  transform: rotate(0);
+  transition: transform 10s;
+}
 
+.containerCajas:hover {
+  transform: rotate(1080deg);
+  transition: transform 10s;
+}
+.containerCajas:hover .caja {
+  transform: rotate(-1080deg);
+  transition: transform 10s;
+}
+
+.caja {
+  margin: 1em;
+  height: 230px;
+  width: 230px;
+  position: absolute;
+  transform: rotate(0);
+  transition: transform 10s;
+  background-size: cover;
+  border-radius: 50%;
+}
+.caja img {
+  height: 230px;
+  width: 230px;
+}
+
+.caja:nth-child(1) {
+  bottom: 76.6666666667px;
+  right: 76.6666666667px;
+}
+
+.caja:nth-child(2) {
+  top: 76.6666666667px;
+  right: 76.6666666667px;
+}
+
+.caja:nth-child(3) {
+  bottom: 76.6666666667px;
+  left: 76.6666666667px;
+}
+
+.caja:nth-child(4) {
+  top: 76.6666666667px;
+  left: 76.6666666667px;
+}
+
+.caja:nth-child(5) {
+  top: calc(50% - 115px);
+  left: 0;
+}
+
+.caja:nth-child(6) {
+  top: calc(50% - 115px);
+  right: 0;
+}
+
+.caja:nth-child(7) {
+  bottom: 0;
+  left: calc(50% - 115px);
+}
+
+.caja:nth-child(8) {
+  top: 0;
+  left: calc(50% - 115px);
+}
+
+@media only screen and (max-width: 1440) {
   .containerprincipal {
     margin-top: 20vh;
   }
@@ -277,6 +351,9 @@ header nav li a:hover {
   }
 
   header nav {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
     margin: 0;
   }
   header nav ul {
@@ -288,14 +365,8 @@ header nav li a:hover {
   }
 
   #ul-list {
-    background: red;
+    background: rgb(234, 234, 234);
     transform: translateX(1em);
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
   }
 
   .show {
@@ -334,5 +405,9 @@ header nav li a:hover {
 
   .section {
     flex-direction: column;
+  }
+
+  .works {
+    margin-top: 100em;
   }
 }/*# sourceMappingURL=style.css.map */
